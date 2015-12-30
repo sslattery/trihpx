@@ -1,16 +1,17 @@
 //---------------------------------------------------------------------------//
-#include <Foo.hpp>
-#include <Bar.hpp>
 
-#include <boost/program_options.hpp>
-#include <boost/range/irange.hpp>
+#include <cassert>
+#include <vector>
 
 #include <hpx/hpx_init.hpp>
 #include <hpx/parallel/execution_policy.hpp>
 #include <hpx/include/parallel_algorithm.hpp>
 
-#include <assert>
-#include <vector>
+#include <boost/program_options.hpp>
+#include <boost/range/irange.hpp>
+
+#include <Foo.hpp>
+#include <Bar.hpp>
 
 //---------------------------------------------------------------------------//
 // hpx main
@@ -32,7 +33,7 @@ int hpx_main( boost::program_options::variables_map& vm )
     auto assign_func = [&]( const int i )
 		    { bar_vec[i].set_data( foo_vec[i] ); };
     hpx::parallel::for_each(
-	hpx::parallel_execution_policy(),
+	hpx::parallel::parallel_execution_policy(),
 	std::begin(range),
 	std::end(range),
 	assign_func );

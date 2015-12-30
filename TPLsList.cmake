@@ -2,7 +2,8 @@
 #
 # Extra add-on TPLs
 SET(trihpx_TPLS_FINDMODS_CLASSIFICATIONS
-  HPX   "cmake/TPLs/"   SS
+  Boost "cmake/tribits/common_tpls/" SS
+  HPX   "cmake/TPLs/"                SS
   )
 
 ##---------------------------------------------------------------------------##

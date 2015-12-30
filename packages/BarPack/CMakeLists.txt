@@ -8,9 +8,9 @@ TRIBITS_PACKAGE(BarPack)
 ## B) Set up package-specific options
 ##---------------------------------------------------------------------------##
 
-# Setup debug option
 TRIBITS_ADD_DEBUG_OPTION()
 
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
 ##---------------------------------------------------------------------------##
 ## C) Build the library
